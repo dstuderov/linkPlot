@@ -1,0 +1,15 @@
+Package: linkPlot
+Title: What the Package Does (One Line, Title Case)
+Version: 1.0
+Authors@R: 
+    person(given = "David",
+           family = "Studer",
+           role = c("aut", "cre"),
+           email = "dstuderov@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: What the package does (one paragraph).
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
