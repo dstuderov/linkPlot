@@ -2,7 +2,7 @@
 #'
 #' @param excel_file The file containing the tasks and the corresponding dates
 #' @param title Title of the plot
-#' @param point_size
+#' @param point_size Size of the points plotted in the Gantt-Chart
 #' @param date_breaks
 #' @param minor_breaks
 #' @param save
@@ -10,10 +10,16 @@
 #' @return
 #' @export
 #'
+#' @import tidyverse
+#' @import openxlsx
+#' @import assertthat
+#' @import forcats
+#'
 #' @examples
 ganttChart <- function(excel_file, title="Gantt-Chart", point_size=5, date_breaks = "4 weeks", minor_breaks = "1 week", save = FALSE){
 
-  assertthat::assert_that(file.exists(here::here(excel_file)))
+  assertthat::assert_that(file.exists(excel_file))
+  df <- openxlsx::read.xlsx(excel_file)
 
   df <- df %>% mutate(from = as.Date(from),
                       to = as.Date(to),
